@@ -1,0 +1,30 @@
+{% extends 'base.html'%}{%load static%} {% block action %}/orderMeals{% endblock %} {%block content%}
+<br>
+<br>
+<br>
+<div class="container">
+    {%for i in items|slice:"0:" %}
+
+    <div class="card">
+        <div class="imgBx">
+            <img src="/media/{{i.Meals_Image}}" alt=i>
+        </div>
+        <div class="contentBx">
+            <h2>{{i.Meals_Name}}</h2>
+            <div class="size">
+                <h3>Qty :</h3>
+                <span>{{i.Meals_quantity}}</span>
+
+            </div>
+            <div class="color">
+                <h3>price :</h3>
+                <span>Rs {{i.Meals_Price}}</span>
+
+            </div>
+            <a href="#">Buy Now</a>
+            <a href="#" id="om{{i.id}}" class="cart">add to cart</a>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{%endblock%}

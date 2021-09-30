@@ -1,0 +1,30 @@
+{% extends 'base.html'%}{%load static%} {% block action %}/buyGrocerries{% endblock %} {%block content%}
+<br>
+<br>
+<br>
+<div class="container">
+    {%for i in items|slice:"0:" %}
+
+    <div class="card">
+        <div class="imgBx">
+            <img src="/media/{{i.Grocerries_Image}}" alt=i>
+        </div>
+        <div class="contentBx">
+            <h2>{{i.Grocerries_Name}}</h2>
+            <div class="size">
+                <h3>weight :</h3>
+                <span>{{i.Grocerries_Weight}}</span>
+
+            </div>
+            <div class="color">
+                <h3>price :</h3>
+                <span>Rs {{i.Grocerries_Price}}</span>
+
+            </div>
+            <a href="#">Buy Now</a>
+            <a href="#" id={{i.id}} class="cart">add to cart</a>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{%endblock%}
